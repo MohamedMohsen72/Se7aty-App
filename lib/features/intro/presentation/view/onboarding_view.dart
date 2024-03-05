@@ -4,6 +4,7 @@ import 'package:se7ety/core/Utils/color.dart';
 import 'package:se7ety/core/Utils/text_styles.dart';
 import 'package:se7ety/features/intro/presentation/data/onboarding_model.dart';
 import 'package:se7ety/core/widget/custombotton.dart';
+import 'package:se7ety/features/intro/presentation/view/welcome_view.dart';
 import 'package:se7ety/features/intro/presentation/widget/onboarding_item.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -40,7 +41,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         backgroundColor: AppColor.whiteColor,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => WelcomeView(),));
+            },
             child: Text(
               'تخطي',
               style: getTextsmall(color: AppColor.primarycolor),
@@ -78,10 +81,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 ),
                 (index==2)?
                 CustomElevatedButton(
+                  style: getTextsmall(color: AppColor.whiteColor),
+wight: 100,
                   height: 45,
                   background: AppColor.primarycolor,
                   foreground: AppColor.whiteColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => WelcomeView(),));
+                  },
                   text: 'هيا بنا',
                 ):
                     SizedBox()
